@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load crispy_forms_tags%}
+
+{%block title%}
+	Depreciation
+{%endblock%}
+
+{%block main%}
+<br>
+<div class="pd">
+	<p><b>Dont change Period when running for current month</b></p><br>
+	<b>Select Period</b>:<input type="text" name=""><br>	
+	<br>
+	<br>
+</div>
+
+<div class="d-update">
+	<a class="btn btn-primary" href="{% url 'main:d-update' %}">Run Depreciation</a>	
+</div>
+
+
+
+
+{%endblock%}

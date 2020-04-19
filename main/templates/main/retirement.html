@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+
+{%block title%}
+{%endblock%}
+
+{%block main%}
+{% if rasset%}
+<h4>View all Assets to be retired</h4><br>
+	<table style="width:100%">
+		<tr>
+			<th>DESCRIPTION</th>
+			<th>TAG_NUMBER</th>
+			<th>SERIAL_NUMBER</th>
+			<th>CATEGORY</th>
+			<th>COST</th>					
+			<th>CURRENT COST</th>	
+			<th>DATE_IN_SERVICE</th>				
+			<th>STATUS</th>					
+	    </tr>
+
+	{% for entry in rasset%}
+		<tr>					
+			<td>{{entry}}</td>
+			<td>{{entry.tag_number}}</td>
+			<td>{{entry.serial_number}}</td>
+			<td>{{entry.category}}</td>
+			<td>{{entry.asset_cost}}</td>						
+			<td>{{entry.current_cost}}</td>						
+			<td>{{entry.date_in_service}}</td>	
+			<td>{{entry.status}}</td>									
+		</tr>
+	{%endfor%}	
+    </table>
+<br>
+<br>
+
+<a class="btn btn-primary" href="{% url 'main:retire-update' %}">Confirm to Retire</a>
+	
+
+{%else%}
+<h4>No Assets scheduled for retirement Yet</h4>
+{%endif%}
+</div>
+{%endblock%}

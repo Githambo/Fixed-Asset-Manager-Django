@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{%block title%}
+	assetdetail
+{%endblock%}
+
+{%block main%}
+<br>
+<br>
+
+<table style="width:120%" >
+	<tr>
+		<th>DESCRIPTION</th>
+		<th>TAG NUMBER</th>
+		<th>SERIAL NUMBER</th>
+		<th>CATEGORY</th>
+		<th>COST</th>
+		<th>DEPRECIATION</th>
+		<th>CURRENT COST</th>
+		<th>LOCATION</th>
+		<th>SUPPLIER</th>
+		<th>DATE_IN_SERVICE</th>										
+	</tr>
+				
+	<tr>
+		<td>{{object}}</td>
+		<td>{{object.tag_number}}</td>
+		<td>{{object.serial_number}}</td>
+		<td>{{object.category}}</td>
+		<td>{{object.asset_cost}}</td>
+		<td>{{object.total_depreciation}}</td>
+		<td>{{object.current_cost}}</td>
+		<td>{{object.location}}</td>
+		<td>{{object.supplier}}</td>
+		<td>{{object.date_in_service}}</td>
+	</tr>				
+</table>
+<br>
+<br>				    
+<div class='action-div'>
+	<a class="btn btn-primary" href="{% url 'main:delete' object.id%}">Delete</a>&nbsp;&nbsp;
+	<a class="btn btn-primary" href="{% url 'main:update' asset.id%}">Update</a>&nbsp;&nbsp;
+	<a class="btn btn-primary" href="{% url 'main:statuschange' pk=object.id %}">Mark for Retire</a>
+</div>
+
+{%endblock%}

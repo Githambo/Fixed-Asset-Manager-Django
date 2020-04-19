@@ -1,0 +1,77 @@
+{%load static%}
+{%load markdownify%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/base.css'%} ">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="{% static 'js/base.js'%}"></script>
+
+	<title>
+		{%block title%}
+			Homepage
+		{%endblock%}
+	</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="/">Home Page</a>
+			<ul class="navbar-nav">
+				{% if user.is_authenticated%}
+				<li class="nav-item">
+					<a class="nav-link" href="">Welcome:&nbsp;&nbsp;<b>{{user}}</b></a>					
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href=""></a>					
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href=""></a>					
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href=""></a>					
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link"  href="{%url 'user:logout' %}"><b>LOG-OUT</b></a>				
+				</li>
+				{%else%}
+				<li class="nav-item">
+					<a class="nav-link"  href="{%url 'user:login' %}">login</a>				
+				</li>
+				{%endif%}				
+			</ul>			
+		</div>		
+	</nav>
+	<div class="main_class">
+		<div class=container>
+			{%block main%}
+			  <ul>
+			  	<h5>Hello {{user}} what do you want to do today? </h5>
+			  	<li><a href="{% url 'main:search' %}">Asset search</a></li><!--Use Elastic search module-->
+			  	<li><a href="{% url 'main:addition' %}">Perform Mass addition</a></li><!-- use of forms-->
+			  	<li><a href="{% url 'main:depreciation'%}">Run depreciation</a></li>
+			  	<li><a href="{% url 'main:retire' %}">Mass retirement</a> </li>
+			  	<li><a href="{% url 'main:register' %}">Asset register</a> </li>
+			  	<br>
+			  	<li>
+			  		<div class="dropdown">
+			  			<button onclick="myFunction()" class="btn btn-primary">Reports</button>
+			  			<div id="myDropdown" class="dropdown-content">
+						    <a href="{% url 'main:download-register' %}">Asset register report</a>
+						    <a href="{% url 'main:retire_report' %}">Retirement report</a>
+						    <a href="#Depreciation-report">Depreciation report</a>
+						    <a href="#ProfitLoss-Report">Profit Loss Report</a>
+  						</div>			  			
+			  		</div>		  		
+			  </ul>
+			{%endblock%}			
+		</div>		
+	</div>
+</body>	
+</html>
+

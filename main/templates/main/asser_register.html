@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+
+{%block title%}
+		register
+{%endblock%}
+
+{%block main%}
+	<table style="width:154%">
+		<tr>
+			<th>DESCRIPTION</th>
+			<th>TAG_NUMBER</th>
+			<th>SERIAL_NUMBER</th>
+			<th>CATEGORY</th>
+			<th>COST</th>
+			<th>MONTHLY_DEPRECIATION</th>
+			<th>TOTAL_DEPRECIATION</th>
+			<th>CURRENT COST</th>
+			<th>LOCATION</th>
+			<th>SUPPLIER</th>
+			<th>DATE_IN_SERVICE</th>
+			<th>STATUS</th>					
+		</tr>
+
+		{% for entry in query%}
+		<tr>					
+			<td>{{entry}}</td>
+			<td>{{entry.tag_number}}</td>
+			<td>{{entry.serial_number}}</td>
+			<td>{{entry.category}}</td>
+			<td>{{entry.asset_cost}}</td>
+			<td>{{entry.monthly_depreciation}}</td>
+			<td>{{entry.total_depreciation}}</td>
+			<td>{{entry.current_cost}}</td>
+			<td>{{entry.location}}</td>
+			<td>{{entry.supplier}}</td>
+			<td>{{entry.date_in_service}}</td>	
+			<td>{{entry.status}}</td>									
+		</tr>
+		{%endfor%}				
+	</table>
+
+	<a href="{% url 'main:download-register'%}"><b>Download The register</b></a>    
+
+{%endblock%}
+
