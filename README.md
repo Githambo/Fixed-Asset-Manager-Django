@@ -11,10 +11,11 @@ Detailed documentation is in the "docs" directory.
 Simple Django app to track asset movement,depreciation and retirements
 
 
-fork the folder,
-Navigate to the directory containing the app
-manage.py runserver
-manage.py migrate
+1.fork the folder,
+2.Navigate to the directory containing the app
+3.manage.py runserver
+4.manage.py migrate
+5.visit http://127.0.0.1:8000
 
 # For app installation
 pip install django-asset-manager
