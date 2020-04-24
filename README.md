@@ -12,6 +12,7 @@ Simple Django app to track asset movement,depreciation and retirements
 
 
 fork the folder,
+Navigate to the directory containing the app
 manage.py runserver
 manage.py migrate
 
