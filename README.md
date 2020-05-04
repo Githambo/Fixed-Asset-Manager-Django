@@ -1,7 +1,7 @@
-# Django-Asset-Manager-
+### Django-Asset-Manager-
 Fixed Asset app to track asset movement,depreciation and retirements
 
-# Django-Asset-Manager-
+## Django-Asset-Manager-
 Erp for Assets
 =====
 Erp for assets is a simple django app that maintains company or firm based assets.
