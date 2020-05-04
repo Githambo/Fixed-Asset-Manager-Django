@@ -17,12 +17,12 @@ Simple Django app to track asset movement,depreciation and retirements
 4.manage.py migrate
 5.visit http://127.0.0.1:8000
 
-# For app installation
-pip install django-asset-manager
+### For app installation
+##### pip install django-asset-manager
 =====
 
 
-Quick start
+#### Quick start
 -----------
 1. Add "Erp" to your INSTALLED_APPS setting like this::
 INSTALLED_APPS = [
